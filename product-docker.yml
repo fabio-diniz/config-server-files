@@ -1,0 +1,16 @@
+server:
+  port: 8081
+    
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://mysql:3306/pantry?serverTimezone=UTC
+    username: product
+    password: product
+    driverClassName: com.mysql.cj.jdbc.Driver
+    
+    
+    
+    

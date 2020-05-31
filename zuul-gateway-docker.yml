@@ -1,0 +1,29 @@
+server:
+  port: 8125
+  
+eureka:
+  instance:
+    hostname: zuul-gateway
+    port: 8761
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+zuul:
+  debug:
+    request: true
+  routes:
+    task:
+      path: /tasks/**
+      serviceId: task
+      stripPrefix: true
+
+ribbon:
+  eager-load:
+    enable: true
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
