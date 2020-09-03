@@ -9,6 +9,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server:8761/eureka/
+    server:
+      wait-time-in-ms-when-sync-empty: 3000
  
 spring:
   jpa:
